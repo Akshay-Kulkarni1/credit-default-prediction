@@ -70,18 +70,6 @@ Expected revenue assumes an annual horizon at 2% of average balance plus 0.1% of
 average spend per month, with revenue set to zero for defaulters. Aggressive and
 conservative acceptance thresholds were evaluated at 0.93 and 0.6.
 
-## Status and known gaps
-
-- The neural network grid search loop (step 17) does not yet build or fit a model.
-  `build_model_nn` is defined but never called, so AUC values are caught by the
-  exception handler and written as `NaN`. The loop structure and result-logging are
-  in place.
-- Step 13 fits `model_3` but persists `model`, the final classifier from the grid
-  search loop. Everything downstream — SHAP plots and strategy scores — uses the
-  persisted model.
-- `test2_df.csv` is read in step 15 but is not written by step 10, unlike the other
-  five split files.
-
 ## Dependencies
 
 `xgboost` is pinned below 2.0 because the classifiers pass `use_label_encoder`,
