@@ -1,0 +1,29 @@
+# Data and model artifacts
+data/*
+!data/.gitkeep
+*.pkl
+*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+cache/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
